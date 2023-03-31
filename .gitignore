@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+dist
+axiosConfig
+dist-ssr
+*.local
+examples
+axiosConfig
+.history

@@ -1,0 +1,181 @@
+@charset "utf-8";
+@import './element.scss';
+$font_default_size: 14px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  text-size-adjust: none;
+  background-color: var(--background);
+}
+
+a,
+.a {
+  text-decoration: none;
+  color: #409eff;
+}
+
+ul {
+  list-style: none;
+}
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.width {
+  width: 100%;
+}
+
+/*竖向居中*/
+.table-cell {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+.clear::after {
+  /*原理： overflow!=visible ;display!=block;float!=none;position!=static||relative 都可为元素创建BFC；消除边距重叠或者浮动产生的影响*/
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/*  字体颜色*/
+.pointer {
+  cursor: pointer;
+}
+// table
+.table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.table thead tr td,
+.table thead tr th {
+  text-align: center;
+  word-break: break-all;
+}
+
+.table tr td,
+.table tr th {
+  box-sizing: border-box;
+  // text-align: center;
+  height: 34px;
+  padding: 12px 0;
+  border: 1px solid transparent;
+  font-size: 14px;
+  word-break: break-all;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter,
+.fade-leave-to
+
+/* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(144, 147, 153, 0.3);
+  border-radius: 2px;
+  transition: all 0.5s;
+}
+@media screen and (min-width: 700px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(144, 147, 153, 0.5);
+  }
+}
+.color_warning {
+  cursor: pointer;
+  color: #f6726c !important;
+}
+
+.color_warning :hover {
+  color: #f6726c;
+}
+
+/* 离开 */
+.slide-fade-X-leave-to {
+  opacity: 0;
+  transform: scale(0);
+  transform: translateX(50px);
+}
+/* 进入 */
+.slide-fade-X-enter-from {
+  opacity: 0;
+  transform: scale(1);
+  transform: translateX(-50px);
+}
+/* 离开 */
+.slide-fade-Y-leave-to {
+  opacity: 0;
+  transform: scale(0);
+  transform: translateY(50px);
+}
+/* 进入 */
+.slide-fade-Y-enter-from {
+  opacity: 0;
+  transform: scale(1);
+  transform: translateY(-50px);
+}
+
+// 启动加载
+.app-loading {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .loading {
+    border: 3px solid var(--el-color-primary-light-7);
+    border-top-color: var(--el-color-primary);
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
