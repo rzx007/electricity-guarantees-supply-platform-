@@ -1,24 +1,24 @@
 <template>
-  <el-card class="t-box-card" shadow="never" :body-style="{ padding: '12px' }">
-    <template #header>
-      <div class="t-header">
-        <span>发电类型统计图</span>
-      </div>
-    </template>
+  <BorderBox title="发电类型统计图" unit="/万千瓦">
     <div id="charts01" class="charts_main"></div>
-  </el-card>
+  </BorderBox>
 </template>
 
 <script lang="ts">
+import { BorderBox } from '@/components/BorderBox'
 import { echarts } from '@/utils/lib/echarts'
 export default defineComponent({
+  components: {
+    BorderBox,
+  },
   data() {
     return {}
   },
   mounted() {
     const chartDom = document.getElementById('charts01')
-    const myChart = echarts.init(chartDom)
+    const myChart = echarts.init(chartDom, 'dark')
     const option = {
+      backgroundColor: 'transparent',
       tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -97,20 +97,8 @@ export default defineComponent({
 })
 </script>
 <style lang="scss">
-.t-box-card {
-  .el-card__header {
-    border: none;
-    padding: 14px 20px;
-  }
-  .t-header {
-    span {
-      font-size: 16px;
-      font-weight: 500;
-    }
-  }
-  .charts_main {
-    height: 320px;
-    width: 100%;
-  }
+.charts_main {
+  height: 320px;
+  width: 100%;
 }
 </style>

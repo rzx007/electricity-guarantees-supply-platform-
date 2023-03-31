@@ -22,7 +22,7 @@ export const useConfigStroe = defineStore('useConfigStroe', {
   state(): AppSettingState {
     return {
       sidebarLogo: checkStorange('sidebarLogo'),
-      menuMode: checkStorange('menuMode') || 'vertical',
+      menuMode: checkStorange('menuMode') || 'horizontal',
       tagsBar: checkStorange('tagsBar'),
       showThemeBar: checkStorange('showThemeBar'),
     }

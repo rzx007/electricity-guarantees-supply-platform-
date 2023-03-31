@@ -20,7 +20,8 @@
       "vite-plugin-pages/client",
       "vite-plugin-vue-layouts/client",
       "unplugin-vue-macros/macros-global",
-      "unplugin-vue-define-options/macros-global"
+      "unplugin-vue-define-options/macros-global",
+      "vite/client"
     ],
     "typeRoots": [
       "./node_modules/@types/",

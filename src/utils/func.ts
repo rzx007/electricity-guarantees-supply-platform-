@@ -168,3 +168,18 @@ export function getLightColor(color: string, level: number): string | void {
   }
   return RgbToHex(rgbc[0], rgbc[1], rgbc[2])
 }
+
+// 获取星期几
+export const getWeek = (date: Date = new Date()) => {
+  const day = date.getDay()
+  const weeks = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+  const week = weeks[day]
+  return week
+}
+
+// 获取当前时间 hh:mm
+export const getTime = (date: Date = new Date()) => {
+  const hour = date.getHours()
+  const minute = date.getMinutes()
+  return `${hour}:${minute < 10 ? 0 + minute.toString() : minute}`
+}

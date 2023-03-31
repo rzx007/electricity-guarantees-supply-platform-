@@ -8,7 +8,7 @@ export const headerCssVars: TcssVar[] = [
   {
     backgroundColor: '#fff',
     activeTextColor: '',
-    textColor: '',
+    textColor: '#fff',
   },
   {
     backgroundColor: '#001529',

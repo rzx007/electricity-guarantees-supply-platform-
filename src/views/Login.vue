@@ -34,7 +34,7 @@ import { useMenuStore } from '@/store/menu'
 import { useRouter } from 'vue-router'
 import { setStorge } from '@/utils/auth'
 
-const slogan = '欢迎登录'
+const slogan = import.meta.env.VITE_TITLE
 const mobile: Ref<string> = ref('')
 const username: Ref<string> = ref('')
 const passwords: Ref<string> = ref('')

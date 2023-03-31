@@ -24,6 +24,9 @@ console.log('hello script setup')
   font-family: Avenir, Helvetica, Arial, sans-serif;
   width: 100%;
   height: 100vh;
+  background-image: url(./assets/img/bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
   .content {
     height: 100%;
     width: 100%;
