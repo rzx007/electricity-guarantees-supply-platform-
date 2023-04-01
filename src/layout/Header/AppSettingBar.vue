@@ -97,7 +97,7 @@ const saveTheme = (key: string, menuMode?: string) => {
   configStroe.changeConfig({ key, value: layout[key] })
   // store.dispatch('changeSetting', { key, value: layout[key] })
 }
-const themeName = ref<string>(localStorage.getItem('_theme_') || 'default')
+const themeName = ref<string>(localStorage.getItem('_bg-theme_') || 'default')
 
 const changeTheme = (data: any) => {
   themeStroe.setSysTheme(data.theme)

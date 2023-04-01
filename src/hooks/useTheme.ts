@@ -17,12 +17,12 @@ export function useTheme() {
     return colorValues
   }
   const setTheme = (theme?: string) => {
-    const localTheme = localStorage.getItem('_theme_') || ''
+    const localTheme = localStorage.getItem('_bg-theme_') || ''
     const el = document.documentElement
     const themeStr = theme === 'default' ? '' : theme
     el.setAttribute('class', theme ? themeStr : localTheme)
     el.setAttribute('data-mode', theme ? themeStr : localTheme)
-    localStorage.setItem('_theme_', theme ? themeStr : localTheme)
+    localStorage.setItem('_bg-theme_', theme ? themeStr : localTheme)
     // 获取 css 变量
     const light = [3, 5, 7, 8, 9]
     const colorValues = getTheme()
@@ -40,7 +40,7 @@ export function useTheme() {
     return colorValues
   }
   const getMode = () => {
-    return localStorage.getItem('_theme_') === DARK_MODE
+    return localStorage.getItem('_bg-theme_') === DARK_MODE
   }
   return {
     getTheme,

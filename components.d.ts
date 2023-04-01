@@ -73,7 +73,7 @@ declare module '@vue/runtime-core' {
     RenderJSX: typeof import('./src/components/renderJSX.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Src: typeof import('./src/components/Contextmenu/src/index.vue')['default']
+    Src: typeof import('./src/components/BorderBox/src/index.vue')['default']
     SubMenu: typeof import('./src/components/ZthMenu/src/sub-menu.vue')['default']
     Toasts: typeof import('./src/components/Toasts/src/toasts.vue')['default']
     Tree: typeof import('./src/components/CurdViews/Tree/Tree.vue')['default']
