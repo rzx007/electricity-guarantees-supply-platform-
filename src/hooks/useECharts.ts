@@ -9,20 +9,16 @@ import { useDebounceFn } from '@vueuse/core'
 import { echarts } from '@/utils'
 
 export function useECharts(elRef: Ref<HTMLDivElement>, theme: 'light' | 'dark' | 'default' = 'dark') {
-  // const { getDarkMode } = useRootSetting();
-  // 主题颜色
-  const getDarkMode = ref('light')
+  const getDarkMode = ref(theme)
   let chartInstance: echarts.ECharts | null = null
   const cacheOptions = ref<EChartsOption>({})
   let removeResizeFn: Fn
 
   const getOptions = computed((): EChartsOption => {
-    // if (getDarkMode !== 'dark') {
-    //   return cacheOptions.value
-    // }
     // @ts-ignore
     return {
       backgroundColor: 'transparent',
+      color: ['#00EEFD', '#64FFD0', '#F5A414'],
       ...cacheOptions.value,
     }
   })
@@ -54,7 +50,7 @@ export function useECharts(elRef: Ref<HTMLDivElement>, theme: 'light' | 'dark' |
     nextTick(() => {
       useTimeoutFn(() => {
         if (!chartInstance) {
-          initCharts(getDarkMode.value as 'default')
+          initCharts(getDarkMode.value as 'dark')
 
           if (!chartInstance) {
             return

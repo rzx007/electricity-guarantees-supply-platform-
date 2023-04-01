@@ -29,9 +29,6 @@ const menuMode = computed(() => configStroe.menuMode)
 const showTags = computed(() => configStroe.tagsBar)
 const menuColor = computed(() => (menuMode.value === 'horizontal' ? themeStroe.headerCss : themeStroe.menuCss))
 const headerColor = computed(() => themeStroe.headerCss)
-
-const mrt = computed(() => (!showTags.value ? '12px' : '0px'))
-
 provide('layout-provide', { menuMode, menuColor, headerColor, showTags })
 </script>
 <style lang="scss">
@@ -48,7 +45,6 @@ provide('layout-provide', { menuMode, menuColor, headerColor, showTags })
     padding-top: 20px;
     .zth-view {
       box-sizing: border-box;
-      padding-top: v-bind('mrt');
       width: 100%;
       height: 100%;
       overflow: hidden;
